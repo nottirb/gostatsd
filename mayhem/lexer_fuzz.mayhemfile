@@ -1,5 +1,5 @@
 project: gostatsd
 target: lexer-fuzz
-image: ghcr.io/nottirb/gostatsd:latest
+# image: ghcr.io/nottirb/gostatsd:latest
 cmds:
 - cmd: /lexer_fuzz
