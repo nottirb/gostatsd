@@ -20,9 +20,6 @@ FROM gcr.io/oss-fuzz-base/base-builder-go as builder
 # Push the code into the container
 COPY . gostatsd
 
-# Remove the mayhem folder from the container
-RUN rm -rf gostatsd/mayhem
-
 # Install the build script
 COPY mayhem/build.sh $SRC/
 
