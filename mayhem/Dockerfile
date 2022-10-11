@@ -18,16 +18,16 @@
 FROM gcr.io/oss-fuzz-base/base-builder-go as builder
 
 # Push the code into the container
-COPY . lnd
+COPY . gostatsd
 
 # Remove the mayhem folder from the container
-RUN rm -rf lnd/mayhem
+RUN rm -rf gostatsd/mayhem
 
 # Install the build script
 COPY mayhem/build.sh $SRC/
 
-# Set the directory to '$SRC/lnd'
-WORKDIR $SRC/lnd
+# Set the directory to '$SRC/gostatsd'
+WORKDIR $SRC/gostatsd
 
 # Setup the environment & compile the program
 ENV FUZZING_LANGUAGE=go SANITIZER=address
